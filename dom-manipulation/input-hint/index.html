@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Accordion jQuery Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+	<script type="text/javascript" src="jquery.inputHint.js"></script>				
+	<script type="text/javascript">
+	$(document).ready(function(){
+		// find all the input elements with title attributes
+		$('input[type="text"][title!=""]').hint();
+	});		
+	</script>
+	<style>
+		dl
+		{
+			font-size:87.5%;
+		}
+		dt
+		{
+			font-weight:bold;
+		}
+		dd
+		{
+			font-weight:normal;
+		}
+		.accordionNode p
+		{
+			padding:0;
+			margin:0;
+		}
+		.accordionHeading
+		{
+			overflow:hidden;
+		}
+		.accordionHeading h3
+		{
+			padding:5px 0;
+			margin:0;
+			float:left;
+		}
+		.accordionHeading a
+		{
+			float:right;
+		}
+		.selected .accordionHeading
+		{
+			background:#FCC;
+		}
+	</style>
+	</head>
+<body>
+	<h1>Input hint jQuery Extension</h1>
+	<ul>
+		<li><a href="jquery.inputHint.js">Code</a></li>
+	</ul>
+	<p>Add input hint text on the input text fields. It disappears when user clicks in.</p>
+	<h2>Example</h2>
+		<form action="#" method="#">
+			<fieldset>
+				<legend>Sample form</legend>
+				<label for="">Please enter you car registration number.</label>
+				<input class="regNumber" type="text" name="registrationNumber" value="" id="regNumber" title="Your Reg" />
+			</fieldset>
+		</form>
+	</div><h3>Example HTML</h3>
+		<pre>
+		&lt;form action="#" method="#"&gt;
+			&lt;fieldset&gt;
+				&lt;legend&gt;Sample form&lt;/legend&gt;
+				&lt;label for="">Please enter you car registration number.&lt;/label&gt;
+				&lt;input class="regNumber" type="text" name="registrationNumber" value="" id="regNumber" title="Your Reg" /&gt;
+			&lt;/fieldset&gt;
+		&lt;/form&gt;			
+		</pre>
+	<h2>Example JS</h2>
+	<pre>
+$(document).ready(function(){
+	$('input[type="text"][title!=""]').hint();
+});
+	</pre>
+</body>
+</html>

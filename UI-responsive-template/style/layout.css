@@ -1,0 +1,110 @@
+/**
+ * @projectDescription: Style sheet used for page layout.
+ * @author: Nidhi Arora <nidhi.arora@haymarket.com>
+ * @version: 1.0
+ * NB. This stylesheet should be used for layout only. E.g. column widths, header structure etc.
+*/
+.row {
+	padding:0px 2% 10px 0;
+}
+
+.row:after {
+	visibility:hidden;
+	clear:both;
+	content:".";
+	height:0;
+	display:block;
+}
+
+.ie6 .row,
+.ie7 .row {
+	height:1%;
+}
+
+.column {
+	float:left;
+}
+
+.right {
+	float:right;
+}
+
+#pageWrapper {
+	width:100%;
+}
+
+.columnWidthFull {
+	width:97.5%;
+	padding:0px 0px 0px 2.5%;
+}
+
+.columnWidthHalf, .columnWidthOneThird, .columnWidthOneFourth {
+	width:97.5%;
+	padding:0px 0px 0px 2.5%;
+	margin-bottom:10px;
+}
+
+/*
+.columnWidthHalf {
+	width:47.5%;
+	padding:0px 0px 0px 2.5%;
+}
+.columnWidthOneThird {
+	width:30.8%;
+	padding:0px 0px 0px 2.5%;
+}
+
+.columnWidthOneFourth {
+	width:22.5%;
+	padding:0px 0px 0px 2.5%;
+}
+*/
+
+header, nav, #pageBody, footer
+{
+	margin-bottom:10px;
+}
+
+
+/********************************************************************/
+/*MEDIA QUERIES */
+/********************************************************************/
+	
+	@media only screen and (min-width:320px){			
+	}
+	
+	@media only screen and (min-width:480px){
+		.columnWidthHalf {
+			width:47.5%;
+		}
+		
+		.columnWidthHalf, .columnWidthOneThird, .columnWidthOneFourth {
+			margin-bottom:0px;
+		}
+	}
+	
+	
+	@media only screen and (min-width:640px){
+		.columnWidthHalf {
+			width:47.5%;
+		}
+		.columnWidthOneThird {
+			width:30.8%;
+		}
+	}
+	
+	@media only screen and (min-width:720px) {
+		
+		.columnWidthHalf {
+			width:47.5%;
+		}
+		.columnWidthOneThird {
+			width:30.8%;
+		}
+		.columnWidthOneFourth {
+			width:22.5%;
+		}
+	}
+	
+/********************************************************************/
+

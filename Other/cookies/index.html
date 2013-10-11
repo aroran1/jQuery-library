@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="example.css">
+		<script type="text/javascript" src="../../jquery-min.js"></script>
+		<script type="text/javascript" src="jquery.cookie.js"></script>
+		<script type="text/javascript">
+			$(function () {
+				var cookieName = "example";
+				$.cookie(cookieName, "", { expires: 7, path: '/' });
+			});
+		</script>
+		<title>Cookies</title>
+	<style>
+		dl
+		{
+			font-size:87.5%;
+		}
+		dt
+		{
+			font-weight:bold;
+		}
+		dd
+		{
+			font-weight:normal;
+		}
+	</style>
+	</head>
+	<body>
+		<h1>Cookies</h1>
+		<ul>
+			<li><a href="jquery.cookie.js">Code</a></li>
+			
+		</ul>
+		<p>This plugin will drop a cookie with a specified name to a page and epires it in a given time</p>
+		
+		<h3>Example JS</h3>
+		<pre>
+$(function () {
+	var cookieName = "example";
+	$.cookie(cookieName, "", { expires: 7, path: '/' });
+});
+		</pre>
+		<h3>Parameters</h3>
+		<dl>
+			<dt>Set a cookie</dt>
+			<dd>
+<pre>
+$.cookie("example", "foo");
+</pre>
+			</dd>
+			<dt>Session cookie</dt>
+			<dd>
+<pre>
+$.cookie("example", "foo", { expires: 7 });
+</pre>
+			</dd>
+			<dt>cookie available for all paths on your domain</dt>
+			<dd>
+<pre>
+$.cookie("example", "foo", { path: '/' });
+</pre>
+			</dd>
+			<dt>cookie limit it to a specific path</dt>
+			<dd>
+<pre>
+$.cookie("example", "foo", { path: '/admin' });
+</pre>
+			</dd>
+			<dt>cookie's value</dt>
+			<dd>
+<pre>
+alert( $.cookie("example") );
+</pre>
+			</dd>
+			<dt>Delete cookie</dt>
+			<dd>
+<pre>
+$.cookie("example", null);
+</pre>
+			</dd>
+		</dl>
+		
+		<p>For more details please see <a href="https://github.com/carhartl/jquery-cookie" target="_blank">https://github.com/carhartl/jquery-cookie</a>.</p>
+	</body>
+</html>

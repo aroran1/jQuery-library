@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Custom Radio jQuery Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+	<script type="text/javascript" src="jquery.custom-radio.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.radioGroup').customRadio()
+				.bind('checkedradio', function(e, index){
+					try{console.log('checked', index);}catch(error){}
+				});
+		});
+	</script>
+	<style>
+		.question {
+			padding:20px;
+			width:500px;
+		}
+		.radioGroup .customRadio {
+			height:14px;
+			width:14px;
+			background:url(img/radio-unchecked.gif) no-repeat top left;
+			float:left;
+			margin: 3px 0 0 5px;
+		}
+		.radioGroup label, 
+		.radioGroup input {
+			float:left;
+		}
+		.radioGroup .radio:after {
+			visibility:hidden;
+			clear:both;
+			content:".";
+			height:0;
+			display:block;
+		}
+		.radioGroup .checked {
+			background:url(img/radio-checked.gif) no-repeat top left;
+		}
+	</style>
+</head>
+<body>
+	<h1>Custom Radio jQuery Extension</h1>
+	<ul>
+		<li><a href="jquery.custom-radio.js">Code</a></li>
+	</ul>
+	<p>Replaces default checkboxes with custom ones.</p>
+	<h2>Example</h2>
+	<div class="question">
+		<div class="radioGroup">
+			<div class="radio">
+				<label for="yes">yes</label>
+				<input type="radio" name="radioTest" id="yes" />
+			</div>
+			<div class="radio">
+				<label for="no">no</label>
+				<input type="radio" name="radioTest" id="no" />
+			</div>
+			<div class="radio">
+				<label for="maybe">maybe</label>
+				<input type="radio" name="radioTest" id="maybe" />
+			</div>
+		</div>
+	</div>
+	<h2>Example JS</h2>
+	<pre>
+$(document).ready(function(){
+	$('.radioGroup').customRadio()
+		.bind('checkedradio', function(e, index){
+			try{console.log('checked', index);}catch(error){}
+		});
+});
+	</pre>
+	<h2>Example JS (with parameters)</h2>
+	<pre>
+$(document).ready(function(){
+	$('.radioGroup').customRadio({
+		node: 'rad',
+		customRadio: 'customRad',
+		checked:'selected'
+	});
+});					
+	</pre>
+	<h2>Parameters</h2>
+	<dl>
+		<dt>node</dt>
+		<dd><em>CSS Selector</em> - CSS selector for radio items (default: '.radio')</dd>
+		<dt>elem</dt>
+		<dd><em>String</em> - Element to be appended (default: 'div')</dd>
+		<dt>customRadio</dt>
+		<dd><em>String</em> - Class to add to custom radio button (default: 'customRadio')</dd>
+		<dt>checked</dt>
+		<dd><em>String</em> - Class to add when the radio button is checked (default: 'checked')</dd>
+	</dl>
+	<h3>Events</h3>
+	<dl>
+		<dt>checkradio</dt>
+		<dd>Checks a radio button, index is passes as second parameter</dd>
+		<dt>checkedradio</dt>
+		<dd>Fires when a radio button is checked, index is passes as second parameter</dd>
+	</dl>
+</body>
+</html>

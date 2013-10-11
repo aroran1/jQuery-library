@@ -1,0 +1,15 @@
+.row {
+	width: 100%;
+	overflow: auto;
+	margin-bottom: 10px;
+}
+.column {
+	float: left;
+	width: 200px;
+	padding: 15px;
+	margin-right: 10px;
+	background: #ddd;
+}
+.column p {
+	margin: 0;
+}

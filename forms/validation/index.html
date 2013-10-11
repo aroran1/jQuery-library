@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Validation jQuery Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+	<script type="text/javascript" src="jquery.validation.js"></script>				
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var $form = $('#form');
+			new $.Validation($form, {
+				rules: [
+					{
+						className: 'passwordRules', 
+						classPair: ['valid', 'notValid'],
+						fnc: function($node){
+							//alphanumeric with at least one number and between 6 and 32 chars long
+							var regex = /^(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{6,32})$/;
+							if($node.val().match(regex)){
+								return true;
+							}
+							return false;
+						}
+					}
+				]
+			});
+			
+			$form.bind('onsubmitvalidation', function(e, valid){
+				try{console.log('submit: ' + valid);}catch(error){};
+			});
+		});		
+	</script>
+	<style>
+		p {
+			margin:0;
+			padding:0;	
+		}
+		.question {
+			padding:0 0 20px;
+		}
+		.row:after{
+			visibility:hidden;
+			clear:both;
+			content:".";
+			height:0;
+			display:block;
+		}		
+		.column {
+			float:left;
+		}
+		.notValidMsg {
+			display:none;
+			color:red;
+		}
+		.notMatchMsg {
+			display:none;
+			color:red;
+		}
+		.validMsg {
+			display:none;
+			color:green;
+		}
+		.notValid .notValidMsg {
+			display:block;
+		}
+		.valid .validMsg {
+			display:block;
+		}
+		.notMatch .notMatchMsg {
+			display:block;
+		}
+	</style>
+	</head>
+<body>
+<div class="pageFrame01">
+	<h1>Validation jQuery Extension</h1>
+	<ul>
+		<li><a href="jquery.validation.js">Code</a></li>
+	</ul>
+	<p>Provides generic validation methods to be applied to form elements. Allows for custom validation methods to be passed in.</p>
+	<h3>Example</h3>
+	<form id="form" action="" method="post">
+		<div class="question required row">
+			<div class="column">
+				<label for="testCheck">do you agree?:</label>
+				<input id="testCheck" type="checkbox" />
+			</div>
+			<div class="column">
+				<p class="notValidMsg">Not Valid</p>
+				<p class="validMsg">Valid</p>
+			</div>
+		</div>
+		<div class="question required row">
+			<div class="column">
+				<label for="testCheck">select one:</label>
+				<select>
+					<option val="Please select">Please select</option>
+					<option val="option 1">option 1</option>
+					<option val="option 2">option 2</option>
+				</select>
+			</div>
+			<div class="column">
+				<p class="notValidMsg">Not Valid</p>
+				<p class="validMsg">Valid</p>
+			</div>
+		</div>
+		<div class="question required row">
+			<div class="column">
+				<label for="yesRadio">radio question:</label>
+				<label for="yesRadio">yes</label>
+				<input id="yesRadio" type="radio" name="radioTest" class="required" />
+				<label for="noRadio">no</label>
+				<input id="noRadio" type="radio" name="radioTest" />
+			</div>
+			<div class="column">
+				<p class="notValidMsg">Not Valid</p>
+				<p class="validMsg">Valid</p>
+			</div>
+		</div>
+		<div class="question required row">
+			<div class="column">
+				<label for="firstName">first name:</label>
+				<input id="firstName" type="text" />
+			</div>
+			<div class="column">
+				<p class="notValidMsg">Not Valid</p>
+				<p class="validMsg">Valid</p>
+			</div>
+		</div>
+		<div class="question dob row">
+			<div class="column">
+				<label for="dob">DOB:</label>
+                <select id="dob" name="dobDay">
+					<option value="-1"></option>
+					<option value="1">01</option>
+					<option value="2">02</option>
+					<option value="3">03</option>
+					<option value="4">04</option>
+					<option value="5">05</option>
+					<option value="6">06</option>
+					<option value="7">07</option>
+					<option value="8">08</option>
+					<option value="9">09</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+					<option value="26">26</option>
+					<option value="27">27</option>
+					<option value="28">28</option>
+					<option value="29">29</option>
+					<option value="30">30</option>
+					<option value="31">31</option>
+				</select>
+                <select name="dobMonth">
+					<option value="-1"></option>
+					<option value="1">01</option>
+					<option value="2">02</option>
+					<option value="3">03</option>
+					<option value="4">04</option>
+					<option value="5">05</option>
+					<option value="6">06</option>
+					<option value="7">07</option>
+					<option value="8">08</option>
+					<option value="9">09</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+				</select>
+                <select name="dobYear">
+					<option value="-1"></option>
+					<option value="2011">2011</option>
+					<option value="2010">2010</option>
+					<option value="2009">2009</option>
+					<option value="2008">2008</option>
+					<option value="2007">2007</option>
+					<option value="2006">2006</option>
+					<option value="2005">2005</option>
+					<option value="2004">2004</option>
+					<option value="2003">2003</option>
+					<option value="2002">2002</option>
+					<option value="2001">2001</option>
+					<option value="2000">2000</option>
+					<option value="1999">1999</option>
+				</select>
+			</div>
+			<div class="column">
+				<p class="notValidMsg">Not Valid</p>
+				<p class="validMsg">Valid</p>
+			</div>
+		</div>
+		<div class="question email row">
+			<div class="column">
+				<label for="email">email:</label>
+				<input id="email" type="text" />
+			</div>
+			<div class="column">
+				<p class="notValidMsg">Not Valid</p>
+				<p class="validMsg">Valid</p>
+			</div>
+		</div>
+		<div class="question postcode row">
+			<div class="column">
+				<label for="postcode">postcode:</label>
+				<input id="postcode" type="text" />
+				<input type="text" />
+			</div>
+			<div class="column">
+				<p class="notValidMsg">Not Valid</p>
+				<p class="validMsg">Valid</p>
+			</div>
+		</div>
+		<div class="question mobile row">
+			<div class="column">
+				<label for="mobile">mobile:</label>
+				<input id="mobile" type="text" />
+			</div>
+			<div class="column">
+				<p class="notValidMsg">Not Valid</p>
+				<p class="validMsg">Valid</p>
+			</div>
+		</div>
+		<div class="question phone row">
+			<div class="column">
+				<label for="phone">phone:</label>
+				<input id="phone" type="text" />
+			</div>
+			<div class="column">
+				<p class="notValidMsg">Not Valid</p>
+				<p class="validMsg">Valid</p>
+			</div>
+		</div>
+		<div class="question password passwordRules row">
+			<div class="column">
+				<label for="pw">password:</label>
+				<input id="pw" type="password" />
+			</div>
+			<div class="column">
+				<p class="notValidMsg">Not Valid</p>
+				<p class="validMsg">Valid</p>
+			</div>
+		</div>
+		<div class="question confirmPassword passwordRules row">
+			<div class="column">
+				<label for="pwConfirm">confirm password:</label>
+				<input id="pwConfirm" type="password" />
+			</div>
+			<div class="column">
+				<p class="notValidMsg">Not Valid</p>
+				<p class="notMatchMsg">Not Match</p>
+				<p class="validMsg">Valid</p>
+			</div>
+		</div>
+		<input class="submit" type="submit" value="submit" />
+	</form>
+	<h3>Example JS</h3>
+	<pre>
+$(document).ready(function(){
+	var $form = $('#form');
+	new $.Validation($form, {
+		rules: [
+			{
+				className: 'passwordRules', 
+				classPair: ['valid', 'notValid'],
+				fnc: function($node){
+					//alphanumeric with at least one number and between 6 and 32 chars long
+					var regex = /^(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{6,32})$/;
+					if($node.val().match(regex)){
+						return true;
+					}
+					return false;
+				}
+			}
+		]
+	});
+	
+	$form.bind('onsubmit.validation', function(e, valid){
+		try{console.log('submit: ' + valid);}catch(error){};
+	});
+});
+	</pre>
+	<h3>Parameters</h3>
+	<dl>
+		<dt>selectors</dt>
+		<dd><em>Object literal</em> - CSS selectors (default: {submit:'.submit', question:'.question'})</dd>
+		<dt>classes</dt>
+		<dd><em>Object literal</em> - CSS classes (default: valid:'valid', notValid:'notValid', checked:'checked', required:'required', email:'email', postcode:'postcode', mobile:'mobile', phone:'phone', password:'password', confirmPassword:'confirmPassword'})</dd>
+		<dt>rules</dt>
+		<dd><em>Array</em> - Array of objects that specify custom validation rules of type: {className: 'password', classPair: ['valid', 'notValid'], fnc: function(){//define custom rule. Must return bool}}(default: [])</dd>
+	</dl>
+	<h3>Events</h3>
+	<dl>
+		<dt>onsubmitvalidation</dt>
+		<dd>Triggered when submit button is clicked. Boolean value based on whether the form validates is passed as a second parameter.</dd>
+		<dt>submitvalidation</dt>
+		<dd>Trigger to validate the entire form.</dd>
+		<dt>oncheckvalidation</dt>
+		<dd>Triggered on a question node when it is checked.</dd>
+	</dl>
+</body>
+</html>

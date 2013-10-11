@@ -1,0 +1,48 @@
+<!DOCTYPE HTML> 
+<html>
+<head>
+<title>jQuery Device detection Prototype</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/> 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!--script src='jQuery.browser.mobile.js'></script-->
+<script>
+	$(document).ready(function(){
+		
+		var adBlock = $('.adBlock');
+		var test;
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+			var adSlot = $(
+							'<div class="">' + 
+								'<h2>Small Banner Ad</h2>' +
+							'</div>'
+						).appendTo(adBlock);
+			
+			test = $(
+				'<script src="test-02.js"></' + 'script>'
+			).appendTo('head');
+		}
+		else {
+			var adSlot = $(
+							'<div class="">' + 
+								'<h2>LeaderBoard Ad</h2>' +
+							'</div>'
+						).appendTo(adBlock);
+			
+		
+			test = $(
+				'<script src="test-01.js"></' + 'script>'
+			).appendTo('head');
+		}
+	});
+</script>
+</head>
+<body>
+	<div class="mainWrapper">
+		<h1>Device detection Prototype</h1>
+		<div class="adBlock">
+		</div>
+	</div>
+</body>
+</html>

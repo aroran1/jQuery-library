@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Incremental Slider jQuery Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+	<script type="text/javascript" src="jquery.event.drag-2.0.min.js"></script>
+	<script type="text/javascript" src="jquery.toucharea.js"></script>
+	<script type="text/javascript" src="jquery.incremental-slider.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.searchRadius').incrementalSlider({
+				showOverlay: true
+			}).bind('onmoveincrementalslider', function(e,i){try{console.log(i);}catch(error){}});
+				
+			$('.yourAge').incrementalSlider()
+				.bind('onmoveincrementalslider', function(e,i){try{console.log(i);}catch(error){}});
+		});
+	</script>
+	<style>
+		.incrementalSlider {
+			background:#ccc;
+			width:300px;
+			padding:20px;
+			margin:0 0 20px;
+		}
+		.incrementalSlider a {
+			padding:0;
+			margin:0;
+			text-decoration:none;
+			color:#000;
+		}
+		.incrementalSlider a:hover {
+			text-decoration:none;
+		}
+		.incrementalSlider .slider {
+			width:267px;
+			height:10px;
+			background:url(img/search-radius-bg.gif) no-repeat top left;
+			margin:9px 0 0;
+		}
+		.incrementalSlider .slider .sliderInner {
+			width:200px;
+			height:10px;
+			position:relative;
+			left:33px;
+		}
+		.incrementalSlider .scroller {
+			height:19px;
+			width:19px;
+			background:url(img/search-radius-scroller.png) no-repeat top left;
+			position:absolute;
+			top:-5px;
+			display:block;
+		}
+		.incrementalSlider .scroller:hover {
+			text-decoration:none;
+		}
+		.incrementalSlider .overlay {
+			position:absolute;
+			top:-20px;
+			left:-15px;
+			z-index:10;
+		}
+		.incrementalSlider .overlay .overlayInner1 {
+			background:url(img/search-radius-overlay-right.png) no-repeat top right;
+			float:left;
+			padding:0 8px 0 0;
+		}
+		.incrementalSlider .overlay .overlayInner2 {
+			background:url(img/search-radius-overlay-left.png) no-repeat top left;
+			float:left;
+			padding:2px 0 8px 8px;
+		}
+		.incrementalSlider .overlay .overlayBtm {
+			background:url(img/search-radius-overlay-arrow.png) no-repeat top left;
+			width:10px;
+			height:8px;
+			position:absolute;
+			bottom:-5px;
+			left:19px;
+		}
+		.incrementalSlider .overlay p {
+			font-size:62.5%;
+			white-space: nowrap;
+			color:#000;
+			padding:0;
+			margin:0;
+		}
+	</style>
+</head>
+<body>
+	<h1>Incremental Slider jQuery Extension</h1>
+	<ul>
+		<li><a href="jquery.incremental-slider.js">Code</a></li>
+	</ul>
+	<p>Replaces radio buttons or a select box with an incremental slider</p>
+	<h2>Example</h2>
+	<div class="incrementalSlider searchRadius">
+		<div class="inputWrapper">
+			<label for="twoMiles">2 miles</label>
+			<input id="twoMiles" type="radio" name="searchRadius" value="2" />
+			<label for="threeMiles">3 miles</label>
+			<input id="threeMiles" type="radio" name="searchRadius" value="3" />
+			<label for="fiveMiles">5 miles</label>
+			<input checked="checked" id="fiveMiles" type="radio" name="searchRadius" value="5" />
+			<br/>
+			<label for="tenMiles">10 miles</label>
+			<input id="tenMiles" type="radio" name="searchRadius" value="10" />
+			<label for="fifteenMiles">15 miles</label>
+			<input id="fifteenMiles" type="radio" name="searchRadius" value="15" />
+			<label for="twentyMiles">20 miles</label>
+			<input id="twentyMiles" type="radio" name="searchRadius" value="20" />
+		</div>
+	</div>
+	
+	<div class="incrementalSlider yourAge">
+		<div class="row">
+			<div class="floatLeft">
+				<label for="yourAge">Your age:</label>
+			</div>
+			<div class="floatRight">
+				<p class="valueRegion"></p>
+			</div>
+		</div>
+		<div class="inputWrapper">
+			<select name="yourAge" id="yourAge">
+				<option value="18">18 Years</option>
+				<option value="19">19 Years</option>
+				<option value="20">20 Years</option>
+				<option value="21">21 Years</option>
+				<option value="22">22 Years</option>
+				<option value="23">23 Years</option>
+				<option value="24">24 Years</option>
+				<option value="25">25 Years</option>
+				<option value="26">26 Years</option>
+				<option value="27">27 Years</option>
+				<option value="28">28 Years</option>
+				<option value="29">29 Years</option>
+				<option value="30">30 Years</option>
+				<option value="31">31 Years</option>
+				<option value="32">32 Years</option>
+				<option value="33">33 Years</option>
+				<option value="34">34 Years</option>
+				<option value="35">35 Years</option>
+				<option value="36">36 Years</option>
+				<option value="37">37 Years</option>
+				<option value="38">38 Years</option>
+				<option value="39">39 Years</option>
+				<option value="40">40 Years</option>
+				<option value="41">41 Years</option>
+				<option value="42">42 Years</option>
+				<option value="43">43 Years</option>
+				<option value="44">44 Years</option>
+				<option value="45">45 Years</option>
+				<option value="46">46 Years</option>
+				<option value="47">47 Years</option>
+				<option value="48">48 Years</option>
+				<option value="49">49 Years</option>
+				<option value="50">50 Years</option>
+				<option value="51">51 Years</option>
+				<option value="52">52 Years</option>
+				<option value="53">53 Years</option>
+				<option value="54">54 Years</option>
+				<option value="55">55 Years</option>
+				<option value="56">56 Years</option>
+				<option value="57">57 Years</option>
+				<option value="58">58 Years</option>
+				<option value="59">59 Years</option>
+				<option value="60">60 Years</option>
+				<option value="61">61 Years</option>
+				<option value="62">62 Years</option>
+				<option value="63">63 Years</option>
+				<option value="64">64 Years</option>
+				<option value="65">65 Years</option>
+				<option value="66">66 Years</option>
+				<option value="67">67 Years</option>
+				<option value="68">68 Years</option>
+				<option value="69">69 Years</option>
+				<option value="70">70 Years</option>
+				<option value="71">71 Years</option>
+				<option value="72">72 Years</option>
+				<option value="73">73 Years</option>
+				<option value="74">74 Years</option>
+				<option value="75">75 Years</option>
+				<option value="76">76 Years</option>
+				<option value="77">77 Years</option>
+				<option value="78">78 Years</option>
+				<option value="79">79 Years</option>
+				<option value="80">80 Years</option>
+			</select>
+		</div>
+	</div>
+	<h2>Example JS</h2>
+	<pre>
+$(document).ready(function(){
+	$('.searchRadius').incrementalSlider();
+});
+	</pre>
+	<h2>Example JS (with parameters)</h2>
+	<pre>
+$(document).ready(function(){
+	$('.searchRadius').incrementalSlider({
+		overlayDuration: 3000,
+		inputWrapper: '.inputs',
+		valueRegion: '.value',
+		showOverlay: true
+	});
+});					
+	</pre>
+	<h2>Parameters</h2>
+	<dl>
+		<dt>overlayDuration</dt>
+		<dd><em>Integer/String</em> - duration that overlay appears for (default: 2000)</dd>
+		<dt>inputWrapper</dt>
+		<dd><em>String</em> - CSS Selector for input/select wrapper (default: '.inputWrapper')</dd>
+		<dt>valueRegion</dt>
+		<dd><em>String</em> - CSS Selector for value region (default: '.valueRegion')</dd>
+		<dt>showOverlay</dt>
+		<dd><em>Boolean</em> - Whether to show overlay or not (default: false)</dd>
+		<dt>mobile</dt>
+		<dd><em>Boolean</em> - Whether to add mobile device drag events or not (default: false)</dd>
+	</dl>
+	<h2>Required</h2>
+	<ul>
+		<li>jquery.event.drag-2.0.js</li>
+		<li>jquery.toucharea.js (if mobile == true)</li>
+	</ul>
+	<h2>Events</h2>
+	<dl>
+		<dt>onmoveincrementalslider</dt>
+		<dd>Fires when the slider moves. Index of the radio that is selected is passed as a second parameter</dd>
+		<dt>moveincrementalslider</dt>
+		<dd>Forces the slider to move. Index of destination to move to is passed as a second parameter</dd>
+	</dl>
+</body>
+</html>

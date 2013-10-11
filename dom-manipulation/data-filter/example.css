@@ -1,0 +1,13 @@
+.example {
+	width: 500px;
+}
+
+.example .tabs {
+	display: none;
+}
+
+.example .content p {
+	background: #ddd;
+	padding: 10px;
+	margin: 0 0 5px 0;
+}

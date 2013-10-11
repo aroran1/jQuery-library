@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+	<title>Fade elem jQuery Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+	<script type="text/javascript" src="jquery.fade-elem.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var show = true;
+			$('#toggleFade').click(function(){
+				$('#fadeContent').fadeElem({
+					fadeOut: show
+				});
+				show = !show;
+			});
+		});
+	</script>
+	<style>
+		#fadeContent {
+			border:1px solid #f00;
+			width:200px;
+		}
+	</style>
+	</head>
+<body>
+	<h1>Fade elem jQuery Extension</h1>
+	<ul>
+		<li><a href="jquery.fade-elem.js">Code</a></li>
+	</ul>
+	<p>Fades or show/hides elements depending if browser is IE<9.</p>
+	<h3>Example</h3>
+	<p><a id="toggleFade" href="#">toggle fade</a></p>
+	<br/>
+	<div id="fadeContent">
+		<p>fade content</p>
+	</div>
+	<h3>Example JS</h3>
+	<pre>
+$(document).ready(function(){
+	$('#fadeContent').fadeElem();
+});
+	</pre>
+	<h3>Example JS (with parameters)</h3>
+	<pre>
+$(document).ready(function(){
+	$('#fadeContent').fadeElem({
+		fadeSpeed: 250,
+		fadeOut: false,
+		callback: function(){//do something when finished}
+	});
+});						
+	</pre>
+	<h3>Parameters</h3>
+	<dl>
+		<dt>fadeSpeed</dt>
+		<dd><em>Integer/String</em> - Fade duration (default: 500)</dd>
+		<dt>fadeOut</dt>
+		<dd><em>Boolean</em> - Whether to fade out or in (default: true)</dd>
+		<dt>callback</dt>
+		<dd><em>Function</em> - Function to run when fade has finished (default: null)</dd>
+	</dl>
+</body>
+</html>

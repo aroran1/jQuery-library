@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+	<title>Show/hide jQuery Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+	<script type="text/javascript" src="jquery.show-hide.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.showHide').showHide()
+				.bind('onopenshowhide', function(){
+					try{console.log('open');}catch(error){}
+				})
+				.bind('oncloseshowhide', function(){
+					try{console.log('close');}catch(error){}
+				});
+		});
+	</script>	
+	<style>
+		p {margin:0;padding:0;}
+		a.open {background:#f00;}
+	</style>			
+	</head>
+<body>
+	<h1>Show/hide jQuery Extension</h1>
+	<ul>
+		<li><a href="jquery.show-hide.js">Code</a></li>
+	</ul>
+	<p>Show/hides content with a trigger.</p>
+	<h3>Example</h3>
+	<div class="showHide" id="one">
+		<p><a href="#" class="showHideTrigger">Show/hide content 1</a></p>
+		<div class="showHideContent">
+			<p>Hidden content 1</p>
+		</div>
+	</div>
+	<div class="showHide" id="two">
+		<p><a href="#" class="showHideTrigger">Show/hide content 2</a></p>
+		<div class="showHideContent">
+			<p>Hidden content 2</p>
+		</div>
+	</div>
+	<h3>Example HTML</h3>
+	<pre>
+&lt;p&gt;&lt;a href="#" class="showHideAllTrigger"&gt;Show/hide all&lt;/a&gt;&lt;/p&gt;
+&lt;div class="showHide"&gt;
+	&lt;a class="showHideTrigger"&gt;Show/hide content 1&lt;/a&gt;
+	&lt;div id="showHideContent"&gt;
+		&lt;p&gt;some hidden content&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+	</pre>
+	<h3>Example JS</h3>
+	<pre>
+$('.showHide').showHide()
+	.bind('onopenshowhide', function(){
+		try{console.log('open');}catch(error){}
+	})
+	.bind('oncloseshowhide', function(){
+		try{console.log('close');}catch(error){}
+	});
+	</pre>
+	<h3>Parameters</h3>
+	<dl>
+		<dt>activeClass</dt>
+		<dd><em>String</em> - class applied to trigger when open (default: 'open')</dd>
+		<dt>duration</dt>
+		<dd><em>String/Integer</em> - duration of slide (default: 'normal')</dd>
+		<dt>event</dt>
+		<dd><em>String</em> - event that triggers show/hide (default: 'click')</dd>
+		<dt>trigger</dt>
+		<dd><em>String</em> - css selector (default: '.showHideTrigger')</dd>
+		<dt>content</dt>
+		<dd><em>String</em> - css selector (default: '.showHideContent')</dd>					
+		<dt>container</dt>
+		<dd><em>String</em> - jQuery selector - used to define an inner container such as a tab ID (default: document)</dd>					
+	</dl>
+	<h3>Events</h3>
+	<dl>
+		<dt>toggleshowhide</dt>
+		<dd>Toggles a node.</dd>
+		<dt>onopenshowhide</dt>
+		<dd>Fires when a node is opened.</dd>
+		<dt>oncloseshowhide</dt>
+		<dd>Fires when a node is closed.</dd>
+	</dl>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="example.css">
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+		<script src="jquery.equal-heights.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function () {
+				$('.row').equalHeights('.column');
+			});
+		</script>
+		<title>Equal heights jQuery extension</title>
+	</head>
+	<body>
+		<h1>Equal heights jQuery extension</h1>
+		<ul>
+			<li><a href="jquery.equal-heights.js">Code</a></li>
+		</ul>
+		<p>Equalises the height of a set of HTML elements to the largest in the set</p>
+		<h3>Example</h3>
+		<div class="row">
+			<div class="column">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate malesuada tellus, eget dignissim elit feugiat eget. Vivamus at sapien eu mi rhoncus venenatis vel eu nulla.</p>
+			</div>
+			<div class="column">
+				<p>Aenean imperdiet vehicula ante, aliquam iaculis mi vehicula eget. Donec nibh velit, mollis at suscipit non, placerat quis augue. Aliquam nisi purus, pharetra lobortis consectetur id, aliquet vitae libero. Maecenas ultricies diam vitae orci euismod iaculis. Vivamus dignissim lectus scelerisque tortor laoreet sed malesuada eros suscipit.</p>
+			</div>
+			<div class="column">
+				<p>Maecenas ante quam, tristique ut bibendum ut, rhoncus ut neque. Nulla fringilla sodales scelerisque. Sed tristique consequat mi a mollis.</p>
+			</div>
+		</div>
+		<h3>Example HTML</h3>
+		<pre>
+&lt;div class="row"&gt;
+	&lt;div class="column"&gt;
+		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate malesuada tellus, eget dignissim elit feugiat eget. Vivamus at sapien eu mi rhoncus venenatis vel eu nulla.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="column"&gt;
+		&lt;p&gt;Aenean imperdiet vehicula ante, aliquam iaculis mi vehicula eget. Donec nibh velit, mollis at suscipit non, placerat quis augue. Aliquam nisi purus, pharetra lobortis consectetur id, aliquet vitae libero. Maecenas ultricies diam vitae orci euismod iaculis. Vivamus dignissim lectus scelerisque tortor laoreet sed malesuada eros suscipit.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="column"&gt;
+		&lt;p&gt;Maecenas ante quam, tristique ut bibendum ut, rhoncus ut neque. Nulla fringilla sodales scelerisque. Sed tristique consequat mi a mollis.&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+		</pre>
+		<h3>Example JS</h3>
+		<pre>
+$(function () {
+	$('.row').equalHeights('.column');
+});
+		</pre>
+		<h3>Parameters</h3>
+		<dl>
+			<dt>[anon]</dt>
+			<dd><em>jQuery selector statement</em> - the elements to select within the container object. If empty, all children on the container object are selected.</dd>
+		</dl>
+	</body>
+</html>

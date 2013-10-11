@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Progressive disclosure jQuery Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+	<script type="text/javascript" src="jquery.progressive-disclosure.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.progressiveDisclosure').progressiveDisclosure({
+				rules: [[0, 1, 0], [0, 2]]
+			});
+		});
+	</script>
+	<style>
+		.question {
+			padding:20px;
+			width:500px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Progressive disclosure jQuery Extension</h1>
+	<ul>
+		<li><a href="jquery.progressive-disclosure.js">Code</a></li>
+	</ul>
+	<p>Shows and hides content based on selected form elements</p>
+	<h2>Example</h2>
+	<div class="progressiveDisclosure">
+		<div class="question progressiveDisclosureQuestion">
+			<input type="checkbox" />
+		</div>
+		<div class="question progressiveDisclosureQuestion">
+			<input type="radio" name="test" />
+			<input type="radio" name="test" />
+			<input type="radio" name="test" />
+		</div>
+		<div class="question progressiveDisclosureQuestion">
+			<select>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+			</select>
+		</div>
+		<div class="question progressiveDisclosureContent">
+			<p>Hidden content</p>
+		</div>
+	</div>
+	<h2>Example JS</h2>
+	<pre>
+$(document).ready(function(){
+	$('.progressiveDisclosure').progressiveDisclosure({
+		rules: [[0, 1, 0], [0, 2]]
+	});
+});
+	</pre>
+	<h2>Example JS (with parameters)</h2>
+	<pre>
+$(document).ready(function(){
+	$('.progressiveDisclosure').progressiveDisclosure({
+		rules: [[0, 1, 0]],
+		question:	'.pdQuestion',
+		content:	'.pdContent',
+		duration:	'slow'
+	});
+});						
+	</pre>
+	<h2>Parameters</h2>
+	<dl>
+		<dt>rules</dt>
+		<dd><em>2D Array</em> - Each value in each array corresponds to the index of the form element that will allow the content to be shown - add multiple arrays to logical OR the rules. To ignore a particular form element, put the value as -1 (default: [])</dd>
+		<dt>question</dt>
+		<dd><em>Selector</em> - Css selector for form element (checkbox, radio, select) (default: '.progressiveDisclosureQuestion')</dd>
+		<dt>content</dt>
+		<dd><em>Selector</em> - Css selector for hidden content (default: '.progressiveDisclosureContent')</dd>
+		<dt>duration</dt>
+		<dd><em>String/Integer</em> - Duration of slide of hidden content (default: 'normal')</dd>
+	</dl>
+</body>
+</html>

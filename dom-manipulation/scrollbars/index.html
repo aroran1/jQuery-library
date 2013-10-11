@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Scrollbars jQuery Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+	<script type="text/javascript" src="jquery.event.drag-2.0.min.js"></script>
+	<script type="text/javascript" src="jquery.mousewheel.min.js"></script>
+	<script type="text/javascript" src="jquery.scrollbars.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.scrollable').scrollbars({horizontalScroll:true});
+		});
+	</script>
+	<style>
+		body {
+			height:1000px;
+		}
+		.scrollable {
+			overflow:scroll;
+			width:500px;
+			height:500px;
+		}
+		.scrollable p {
+			width:720px;
+			margin:0;
+			padding:0 0 20px;
+		}
+		.verticalScroll .arrow1 .arrow1Inner {
+			background: url("img/vertical/scrollTop.png") no-repeat left top;
+			cursor:auto;
+			height: 27px;
+    		width: 20px;
+		}
+		.verticalScroll .active .arrow1Inner {
+			background: url("img/vertical/scrollTopActive.png") no-repeat left top;
+			cursor:pointer;
+		}
+		.verticalScroll .arrow2 .arrow2Inner {
+			background: url("img/vertical/scrollBtm.png") no-repeat left bottom;
+			cursor:auto;
+			height: 27px;
+    		width: 20px;
+		}
+		.verticalScroll .active .arrow2Inner {
+			background: url("img/vertical/scrollBtmActive.png") no-repeat left bottom;
+			cursor:pointer;
+		}
+		.verticalScroll .scrollBg {
+			background: url("img/vertical/scrollBg.gif") repeat-y left top;
+		    margin: 0 0 0 8px;
+		    position: relative;
+		    width: 4px;
+		}
+		.verticalScroll .scrollBar {
+			left:-2px;
+		}
+		.verticalScroll .scrollBarInner1 {
+			background: url("img/vertical/scrollBarTop.png") no-repeat left top;
+    		padding: 10px 0 0;
+		}
+		.verticalScroll .scrollBarInner2 {
+			background: url("img/vertical/scrollBarBtm.png") no-repeat left bottom;
+    		width: 10px;
+		}
+		.verticalScroll .scrollGrab {
+			background: url("img/vertical/scrollGrab.gif") no-repeat center top;
+    		width: 8px;
+    		height: 7px;
+		}
+		.horizontalScroll .arrow1 {
+			float:left;
+		}
+		.horizontalScroll .arrow1 .arrow1Inner {
+			background: url("img/horizontal/scrollLeft.png") no-repeat left top;
+			cursor:auto;
+			height: 20px;
+    		width: 30px;
+		}
+		.horizontalScroll .active .arrow1Inner {
+			background: url("img/horizontal/scrollLeftActive.png") no-repeat left top;
+			cursor:pointer;
+		}
+		.horizontalScroll .arrow2 {
+			float:left;
+		}
+		.horizontalScroll .arrow2 .arrow2Inner {
+			background: url("img/horizontal/scrollRight.png") no-repeat right center;
+			cursor:auto;
+			height: 20px;
+    		width: 30px;
+		}
+		.horizontalScroll .active .arrow2Inner {
+			background: url("img/horizontal/scrollRightActive.png") no-repeat right center;
+			cursor:pointer;
+		}
+		.horizontalScroll .scrollBg {
+			background: url("img/horizontal/scrollBg.gif") repeat-x left top;
+		    margin: 8px 0 0 0;
+		    position: relative;
+		    height: 4px;
+		    float:left;
+		}
+		.horizontalScroll .scrollBar {
+			top:-2px;
+			float:left;
+		}
+		.horizontalScroll .scrollBarInner1 {
+			background: url("img/horizontal/scrollBarTop.png") no-repeat right top;
+			padding:0 10px 0 0;
+			float:left;
+		}
+		.horizontalScroll .scrollBarInner2 {
+			background: url("img/horizontal/scrollBarBtm.png") no-repeat left top;
+    		height: 10px;
+    		float:left;
+		}
+		.horizontalScroll .scrollGrab {
+			background: url("img/horizontal/scrollGrab.gif") no-repeat left top;
+    		width: 8px;
+    		height: 7px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Scrollbars jQuery Extension</h1>
+	<ul>
+		<li><a href="jquery.scrollbars.js">Code</a></li>
+	</ul>
+	<p>Allows custom scrollbars to be added to an element</p>
+	<h2>Example</h2>
+	<div class="scrollable">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor nibh ac massa. Nullam vitae tellus eget nulla imperdiet bibendum. Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sit amet metus. Vivamus porta suscipit nulla. Donec neque risus, tincidunt quis, hendrerit et, pretium nec, augue. Duis nunc leo, varius sit amet, pellentesque eu, vehicula non, leo. Pellentesque vitae orci. Morbi enim arcu, pretium lacinia, tincidunt cursus, fringilla nec, metus. Vestibulum euismod ipsum id sem. Vivamus ante. Aliquam erat volutpat. Pellentesque venenatis lorem vel turpis. Etiam ac lorem vel ligula vestibulum molestie. In adipiscing, dolor et auctor auctor, arcu erat ultrices sapien, gravida posuere nisi purus vel diam. Morbi eu lacus.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor nibh ac massa. Nullam vitae tellus eget nulla imperdiet bibendum. Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sit amet metus. Vivamus porta suscipit nulla. Donec neque risus, tincidunt quis, hendrerit et, pretium nec, augue. Duis nunc leo, varius sit amet, pellentesque eu, vehicula non, leo. Pellentesque vitae orci. Morbi enim arcu, pretium lacinia, tincidunt cursus, fringilla nec, metus. Vestibulum euismod ipsum id sem. Vivamus ante. Aliquam erat volutpat. Pellentesque venenatis lorem vel turpis. Etiam ac lorem vel ligula vestibulum molestie. In adipiscing, dolor et auctor auctor, arcu erat ultrices sapien, gravida posuere nisi purus vel diam. Morbi eu lacus.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor nibh ac massa. Nullam vitae tellus eget nulla imperdiet bibendum. Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sit amet metus. Vivamus porta suscipit nulla. Donec neque risus, tincidunt quis, hendrerit et, pretium nec, augue. Duis nunc leo, varius sit amet, pellentesque eu, vehicula non, leo. Pellentesque vitae orci. Morbi enim arcu, pretium lacinia, tincidunt cursus, fringilla nec, metus. Vestibulum euismod ipsum id sem. Vivamus ante. Aliquam erat volutpat. Pellentesque venenatis lorem vel turpis. Etiam ac lorem vel ligula vestibulum molestie. In adipiscing, dolor et auctor auctor, arcu erat ultrices sapien, gravida posuere nisi purus vel diam. Morbi eu lacus.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor nibh ac massa. Nullam vitae tellus eget nulla imperdiet bibendum. Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sit amet metus. Vivamus porta suscipit nulla. Donec neque risus, tincidunt quis, hendrerit et, pretium nec, augue. Duis nunc leo, varius sit amet, pellentesque eu, vehicula non, leo. Pellentesque vitae orci. Morbi enim arcu, pretium lacinia, tincidunt cursus, fringilla nec, metus. Vestibulum euismod ipsum id sem. Vivamus ante. Aliquam erat volutpat. Pellentesque venenatis lorem vel turpis. Etiam ac lorem vel ligula vestibulum molestie. In adipiscing, dolor et auctor auctor, arcu erat ultrices sapien, gravida posuere nisi purus vel diam. Morbi eu lacus.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor nibh ac massa. Nullam vitae tellus eget nulla imperdiet bibendum. Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sit amet metus. Vivamus porta suscipit nulla. Donec neque risus, tincidunt quis, hendrerit et, pretium nec, augue. Duis nunc leo, varius sit amet, pellentesque eu, vehicula non, leo. Pellentesque vitae orci. Morbi enim arcu, pretium lacinia, tincidunt cursus, fringilla nec, metus. Vestibulum euismod ipsum id sem. Vivamus ante. Aliquam erat volutpat. Pellentesque venenatis lorem vel turpis. Etiam ac lorem vel ligula vestibulum molestie. In adipiscing, dolor et auctor auctor, arcu erat ultrices sapien, gravida posuere nisi purus vel diam. Morbi eu lacus.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor nibh ac massa. Nullam vitae tellus eget nulla imperdiet bibendum. Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sit amet metus. Vivamus porta suscipit nulla. Donec neque risus, tincidunt quis, hendrerit et, pretium nec, augue. Duis nunc leo, varius sit amet, pellentesque eu, vehicula non, leo. Pellentesque vitae orci. Morbi enim arcu, pretium lacinia, tincidunt cursus, fringilla nec, metus. Vestibulum euismod ipsum id sem. Vivamus ante. Aliquam erat volutpat. Pellentesque venenatis lorem vel turpis. Etiam ac lorem vel ligula vestibulum molestie. In adipiscing, dolor et auctor auctor, arcu erat ultrices sapien, gravida posuere nisi purus vel diam. Morbi eu lacus.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor nibh ac massa. Nullam vitae tellus eget nulla imperdiet bibendum. Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sit amet metus. Vivamus porta suscipit nulla. Donec neque risus, tincidunt quis, hendrerit et, pretium nec, augue. Duis nunc leo, varius sit amet, pellentesque eu, vehicula non, leo. Pellentesque vitae orci. Morbi enim arcu, pretium lacinia, tincidunt cursus, fringilla nec, metus. Vestibulum euismod ipsum id sem. Vivamus ante. Aliquam erat volutpat. Pellentesque venenatis lorem vel turpis. Etiam ac lorem vel ligula vestibulum molestie. In adipiscing, dolor et auctor auctor, arcu erat ultrices sapien, gravida posuere nisi purus vel diam. Morbi eu lacus.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor nibh ac massa. Nullam vitae tellus eget nulla imperdiet bibendum. Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sit amet metus. Vivamus porta suscipit nulla. Donec neque risus, tincidunt quis, hendrerit et, pretium nec, augue. Duis nunc leo, varius sit amet, pellentesque eu, vehicula non, leo. Pellentesque vitae orci. Morbi enim arcu, pretium lacinia, tincidunt cursus, fringilla nec, metus. Vestibulum euismod ipsum id sem. Vivamus ante. Aliquam erat volutpat. Pellentesque venenatis lorem vel turpis. Etiam ac lorem vel ligula vestibulum molestie. In adipiscing, dolor et auctor auctor, arcu erat ultrices sapien, gravida posuere nisi purus vel diam. Morbi eu lacus.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor nibh ac massa. Nullam vitae tellus eget nulla imperdiet bibendum. Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sit amet metus. Vivamus porta suscipit nulla. Donec neque risus, tincidunt quis, hendrerit et, pretium nec, augue. Duis nunc leo, varius sit amet, pellentesque eu, vehicula non, leo. Pellentesque vitae orci. Morbi enim arcu, pretium lacinia, tincidunt cursus, fringilla nec, metus. Vestibulum euismod ipsum id sem. Vivamus ante. Aliquam erat volutpat. Pellentesque venenatis lorem vel turpis. Etiam ac lorem vel ligula vestibulum molestie. In adipiscing, dolor et auctor auctor, arcu erat ultrices sapien, gravida posuere nisi purus vel diam. Morbi eu lacus.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor nibh ac massa. Nullam vitae tellus eget nulla imperdiet bibendum. Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sit amet metus. Vivamus porta suscipit nulla. Donec neque risus, tincidunt quis, hendrerit et, pretium nec, augue. Duis nunc leo, varius sit amet, pellentesque eu, vehicula non, leo. Pellentesque vitae orci. Morbi enim arcu, pretium lacinia, tincidunt cursus, fringilla nec, metus. Vestibulum euismod ipsum id sem. Vivamus ante. Aliquam erat volutpat. Pellentesque venenatis lorem vel turpis. Etiam ac lorem vel ligula vestibulum molestie. In adipiscing, dolor et auctor auctor, arcu erat ultrices sapien, gravida posuere nisi purus vel diam. Morbi eu lacus.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor nibh ac massa. Nullam vitae tellus eget nulla imperdiet bibendum. Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sit amet metus. Vivamus porta suscipit nulla. Donec neque risus, tincidunt quis, hendrerit et, pretium nec, augue. Duis nunc leo, varius sit amet, pellentesque eu, vehicula non, leo. Pellentesque vitae orci. Morbi enim arcu, pretium lacinia, tincidunt cursus, fringilla nec, metus. Vestibulum euismod ipsum id sem. Vivamus ante. Aliquam erat volutpat. Pellentesque venenatis lorem vel turpis. Etiam ac lorem vel ligula vestibulum molestie. In adipiscing, dolor et auctor auctor, arcu erat ultrices sapien, gravida posuere nisi purus vel diam. Morbi eu lacus.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor nibh ac massa. Nullam vitae tellus eget nulla imperdiet bibendum. Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sit amet metus. Vivamus porta suscipit nulla. Donec neque risus, tincidunt quis, hendrerit et, pretium nec, augue. Duis nunc leo, varius sit amet, pellentesque eu, vehicula non, leo. Pellentesque vitae orci. Morbi enim arcu, pretium lacinia, tincidunt cursus, fringilla nec, metus. Vestibulum euismod ipsum id sem. Vivamus ante. Aliquam erat volutpat. Pellentesque venenatis lorem vel turpis. Etiam ac lorem vel ligula vestibulum molestie. In adipiscing, dolor et auctor auctor, arcu erat ultrices sapien, gravida posuere nisi purus vel diam. Morbi eu lacus.</p>
+	</div>
+	<h2>Example JS</h2>
+	<pre>
+$(document).ready(function(){
+	$('.scrollable').scrollbars();
+});
+	</pre>
+	<h2>Example JS (with parameters)</h2>
+	<pre>
+$(document).ready(function(){
+	$('.scrollable').scrollbars({
+		increment: 10,
+		wheelMultiplier: 4,
+		minSize: 30,
+		horizontalScroll: true,
+		active: 'on'
+	});
+});						
+	</pre>
+	<h2>Requires</h2>
+	<ul>
+		<li>jquery.event.drag-2.0.js</li>
+		<li>jquery.mousewheel.js</li>
+	</ul>
+	<h2>Parameters</h2>
+	<dl>
+		<dt>increment</dt>
+		<dd><em>Integer</em> - Number of pixels to move content for one click (default: 20)</dd>
+		<dt>wheelMultiplier</dt>
+		<dd><em>Integer</em> - Number of pixels to move content for one scroll wheel pip (default: 2)</dd>
+		<dt>minSize</dt>
+		<dd><em>Integer</em> - Minimum pixel size of scrollbar (default: 20)</dd>
+		<dt>horizontalScroll</dt>
+		<dd><em>Boolean</em> - Adds a horizontal scrollbar if true. Set to true when content has explicit width (default: false)</dd>
+		<dt>active</dt>
+		<dd><em>String</em> - Class to add to arrows when active (default: 'active')</dd>
+	</dl>
+</body>
+</html>

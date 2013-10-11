@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Lightbox jQuery Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+	<script type="text/javascript" src="jquery.lightbox.js"></script>				
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('.lightboxTrigger').click(function(e){
+			e.preventDefault();
+			$lightbox = $.lightbox({
+				content: '<p>test content</p>'
+			})
+			.bind('oncloselightbox', function(){
+				try{console.log('close');}catch(error){}
+			});
+		});
+	});		
+	</script>
+	<style>
+		.overlay {
+		    position:absolute;
+		    top:0;
+		    left:0;
+		    background:url("img/overlay-bg.png");
+		}
+		.lightbox {
+		    width: 580px;
+		    position:absolute;
+		    top:0;
+		    left:0;
+		    background: #fff;
+		}
+		.lightboxInner1 {
+		    padding:30px;
+		}
+		.close {
+		    height:30px;
+		    width:30px;
+		    background:url("img/close.png") no-repeat top left;
+		    position:absolute;
+		    top:-15px;
+		    right:-15px;
+		}
+	</style>
+	</head>
+<body>
+<div class="pageFrame01">
+	<h1>Lightbox jQuery Extension</h1>
+	<ul>
+		<li><a href="jquery.lightbox.js">Code</a></li>
+	</ul>
+	<p>Creats a lightbox with an overlay</p>
+	<h3>Example</h3>
+	<p><a href="#" class="lightboxTrigger">trigger</a></p>
+	<h3>Example JS</h3>
+	<pre>
+$('.lightboxTrigger').click(function(e){
+	e.preventDefault();
+	$lightbox = $.lightbox({
+		content: '&lt;p&gt;test content&lt;/p&gt;'
+	})
+	.bind('onclose.lightbox', function(){
+		try{console.log('close');}catch(error){}
+	});
+});
+	</pre>
+	<h3>Example JS (with parameters)</h3>
+	<pre>
+$(document).ready(function(){
+	$('.lightboxTrigger').click(function(e){
+		e.preventDefault();
+		$.lightbox({
+			content: $('.someContainer').html(),
+			className: 'lightboxStyle00',
+			windowTop: true
+		});
+	});
+});					
+	</pre>
+	<h3>Parameters</h3>
+	<dl>
+		<dt>content</dt>
+		<dd><em>String</em> - String of HTML (default: '')</dd>
+		<dt>className</dt>
+		<dd><em>String</em> - Class name to be added to '.lightbox' div (default: '')</dd>
+		<dt>windowTop</dt>
+		<dd><em>Boolean</em> - Whether lightbox should appear at top of window (default: false)</dd>
+	</dl>
+	<h3>Events</h3>
+	<dl>
+		<dt>closelightbox</dt>
+		<dd>Closes the lightbox.</dd>
+		<dt>oncloselightbox</dt>
+		<dd>Fires when lightbox is closed.</dd>
+		<dt>resizelightbox</dt>
+		<dd>Trigger to change the width and therefore the position of the lightbox. Pass the width in as a second parameter</dd>
+	</dl>
+</body>
+</html>

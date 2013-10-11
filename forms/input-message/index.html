@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+	<title>Textarea Maxlength jQuery Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+	<script type="text/javascript" src="jquery.input-message.js"></script>
+	<script type="text/javascript">
+	
+	$(document).ready(function(){
+		$('#searchCriteria').inputMsg({message:'Search...'});
+	});
+	
+	</script>
+	</head>
+<body>
+<div class="pageFrame01">
+	<h1>Input Field default message jQuery Extension</h1>
+	<ul>
+		<li><a href="jquery.input-message.js">Code</a></li>
+	</ul>
+	<p>Set a default message for input fields which will disappear on focus and reappear if input is blank</p>
+	<h3>Example</h3>
+	<pre>$(document).ready(function(){<br>	$('#searchCriteria').inputMsg({
+		message:'Search...'
+	});<br>});</pre>
+<input name="searchCriteria" id="searchCriteria" />
+<h3>Parameters</h3>
+	<dl>
+		<dt>message</dt>
+		<dd><em>String</em> - input instruction message (default value: &quot;Text here...&quot;).</dd>
+		<dt>color</dt>
+        <dd><em>String</em> - message text color (default value: &quot;#ccc&quot;).</dd>
+	</dl>
+</body>
+</html>

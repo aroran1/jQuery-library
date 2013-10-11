@@ -1,0 +1,25 @@
+#demo1 {
+	width: 600px;
+	border: 1px solid #ccc;
+}
+#demo1 div {
+	background: #fff;
+}
+#demo1 div h2,
+#demo1 div p {
+	padding: 10px;
+	margin: 0;
+}
+#demoPrev1, #demoNext1, #pager1 {
+	display: none;
+}
+#controls1 {
+	text-align: center;
+	width: 600px;
+}
+#controls1 a {
+	padding: 0 3px;
+}
+#controls1 .disabled {
+	visibility: hidden;
+}

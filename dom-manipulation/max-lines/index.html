@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Max lines jQuery Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+	<script type="text/javascript" src="jquery.max-lines.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.maxLines').maxLines(3);
+		});
+	</script>
+</head>
+<body>
+	<h1>Max lines jQuery Extension</h1>
+	<ul>
+		<li><a href="jquery.max-lines.js">Code</a></li>
+	</ul>
+	<p>Limits the maximum number of lines of text in an element</p>
+	<h3>Example</h3>
+	<div style="width:300px;">
+		<p class="maxLines">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor nibh ac massa. Nullam vitae tellus eget nulla imperdiet bibendum. Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sit amet metus. Vivamus porta suscipit nulla. Donec neque risus, tincidunt quis, hendrerit et, pretium nec, augue. Duis nunc leo, varius sit amet, pellentesque eu, vehicula non, leo. Pellentesque vitae orci. Morbi enim arcu, pretium lacinia, tincidunt cursus, fringilla nec, metus. Vestibulum euismod ipsum id sem. Vivamus ante. Aliquam erat volutpat. Pellentesque venenatis lorem vel turpis. Etiam ac lorem vel ligula vestibulum molestie. In adipiscing, dolor et auctor auctor, arcu erat ultrices sapien, gravida posuere nisi purus vel diam. Morbi eu lacus.</p>
+	</div>
+	<h3>Example JS</h3>
+	<pre>
+$(document).ready(function(){
+	$('.maxLines').maxLines(3, {
+		suffix: '... The suspense is killing me!'
+	});
+});
+	</pre>
+	<h3>Parameters</h3>
+	<dl>
+		<dt>n</dt>
+		<dd><em>Int</em> - maximum number of lines</dd>
+		<dt>suffix</dt>
+		<dd><em>String</em> - suffix appended to curtailed text (default: '...')</dd>				
+	</dl>
+</body>
+</html>

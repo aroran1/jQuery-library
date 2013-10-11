@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Accordion jQuery Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+	<script type="text/javascript" src="jquery.accordion.js"></script>				
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('div.accordion').accordion({
+			node:'div.accordionNode',
+			heading:'div.accordionHeading',
+			content:'div.accordionContent',
+			open:'selected',
+			update:[
+				{selector:'a.update',text:['close','open']}
+			],
+			overlap: true
+		})
+		.bind('onopenaccordion',function(e,node){try{console.log(node);}catch(error){}})
+		.bind('oncloseaccordion',function(e,node){try{console.log(node);}catch(error){}});
+	});		
+	</script>
+	<style>
+		dl
+		{
+			font-size:87.5%;
+		}
+		dt
+		{
+			font-weight:bold;
+		}
+		dd
+		{
+			font-weight:normal;
+		}
+		.accordionNode p
+		{
+			padding:0;
+			margin:0;
+		}
+		.accordionHeading
+		{
+			overflow:hidden;
+		}
+		.accordionHeading h3
+		{
+			padding:5px 0;
+			margin:0;
+			float:left;
+		}
+		.accordionHeading a
+		{
+			float:right;
+		}
+		.selected .accordionHeading
+		{
+			background:#FCC;
+		}
+	</style>
+	</head>
+<body>
+	<h1>Accordion jQuery Extension</h1>
+	<ul>
+		<li><a href="jquery.accordion.js">Code</a></li>
+	</ul>
+	<p>Creates accordion effect on content nodes.</p>
+	<h2>Example</h2>
+	<div class="accordion">
+		<div class="accordionNode" id="node1">
+			<div class="accordionHeading"><h3>Heading #1</h3><a href="#" class="update">open</a></div>
+			<div class="accordionContent">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor nibh ac massa. Nullam vitae tellus eget nulla imperdiet bibendum. Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sit amet metus. Vivamus porta suscipit nulla. Donec neque risus, tincidunt quis, hendrerit et, pretium nec, augue. Duis nunc leo, varius sit amet, pellentesque eu, vehicula non, leo. Pellentesque vitae orci. Morbi enim arcu, pretium lacinia, tincidunt cursus, fringilla nec, metus. Vestibulum euismod ipsum id sem. Vivamus ante. Aliquam erat volutpat. Pellentesque venenatis lorem vel turpis. Etiam ac lorem vel ligula vestibulum molestie. In adipiscing, dolor et auctor auctor, arcu erat ultrices sapien, gravida posuere nisi purus vel diam. Morbi eu lacus.</p>
+			</div>
+		</div>
+		<div class="accordionNode" id="node2">
+			<div class="accordionHeading"><h3>Heading #2</h3><a href="#" class="update">open</a></div>
+			<div class="accordionContent">
+				<p>Mauris elit. Nulla et tortor. Quisque ullamcorper molestie orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam et enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur et ante.</p>
+			</div>
+		</div>
+		<div class="accordionNode" id="node3">
+			<div class="accordionHeading"><h3>Heading #3</h3><a href="#" class="update">open</a></div>
+			<div class="accordionContent">
+				<p>Praesent fermentum leo sed enim. Vivamus egestas nisl at metus. Etiam pellentesque, nulla ut ullamcorper faucibus, diam massa iaculis lacus, et cursus turpis diam a sem. Cras tristique, lectus ut aliquam pretium, felis ligula convallis orci, id molestie purus urna id lorem. Fusce nunc. Sed tempus urna ut augue. Suspendisse et metus in ante consequat pretium. Maecenas at diam. Quisque fringilla elit a justo. Phasellus dignissim. Etiam volutpat dictum metus. Donec ultricies purus sit amet libero. Etiam dolor sem, malesuada a, pellentesque in, bibendum id, eros. Nullam ullamcorper, velit nec bibendum dictum, leo quam porttitor velit, sed auctor eros mauris id metus.</p>
+			</div>
+		</div>
+		<div class="accordionNode" id="node4">
+			<div class="accordionHeading"><h3>Heading #4</h3><a href="#" class="update">open</a></div>
+			<div class="accordionContent">
+				<p>Fusce est elit, semper varius, accumsan vel, varius sed, lacus. Nullam eget lacus. Proin lacinia vestibulum diam. Nam pretium, libero pharetra faucibus volutpat, neque est vehicula diam, tincidunt interdum urna nisl in nisi. Mauris eu neque. Vivamus euismod vehicula lectus. Aenean vulputate sem eget tortor. Nullam blandit faucibus lorem. Donec aliquet commodo purus. Vivamus vehicula scelerisque lorem. Phasellus vehicula lorem nec risus. Nullam consectetur erat id tellus viverra sodales. Donec id est. Praesent gravida dui in est. Integer vitae magna nec enim faucibus auctor. Sed porta placerat dui. Aliquam vulputate. Pellentesque diam turpis, lacinia eget, fringilla id, pellentesque eu, neque. Aenean consectetur vehicula nulla.</p>
+			</div>
+		</div>
+		<div class="accordionNode" id="node5">
+			<div class="accordionHeading"><h3>Heading #5</h3><a href="#" class="update">open</a></div>
+			<div class="accordionContent">
+				<p>Proin quis nisl. Nam feugiat velit id lorem. Cras nunc nunc, mattis ac, porta sit amet, pretium ut, arcu. Donec mollis porttitor diam. Ut ultrices quam. Morbi tempor dignissim risus. Donec nec leo id libero lobortis egestas. Praesent sem justo, vulputate sit amet, vehicula a, accumsan sed, erat. Praesent dictum eros non ligula. Quisque nisl nisl, scelerisque a, tempus a, pulvinar in, lectus. Nulla eu mi ut eros commodo vulputate. Suspendisse potenti. Duis tempor libero vitae ante. Mauris rhoncus aliquam orci. In massa dolor, faucibus ac, vestibulum vitae, congue a, massa. Mauris sem ipsum, elementum eu, ultrices ac, vehicula a, diam. Suspendisse porta convallis nunc. Nulla sapien metus, iaculis eget, blandit non, pellentesque eu, velit. </p>
+			</div>
+		</div>
+	</div>
+	<h2>Example JS</h2>
+	<pre>
+$(document).ready(function(){
+	$('div.accordion').accordion();
+});
+	</pre>
+	<h2>Example JS (with parameters)</h2>
+	<pre>
+$(document).ready(function(){
+	// create accordion object
+	$('div.accordion').accordion({
+		node:'div.accordionNode',
+		heading:'div.accordionHeading',
+		content:'div.accordionContent',
+		open:'selected',
+		update:[
+			{selector:'a.update',text:['close','open']}
+		]
+	})
+	.bind('onopenaccordion',function(e,node){try{console.log(node);}catch(error){}})
+	.bind('oncloseaccordion',function(e,node){try{console.log(node);}catch(error){}});
+});						
+	</pre>
+	<h2>Parameters</h2>
+	<dl>
+		<dt>node</dt>
+		<dd><em>Selector</em> - CSS selector for accordion node (default: 'div.node')</dd>
+		<dt>heading</dt>
+		<dd><em>Selector</em> - CSS selector for trigger element (default: 'h2')</dd>
+		<dt>content</dt>
+		<dd><em>Selector</em> - CSS selector for accordion content (default: 'div.content')</dd>
+		<dt>open</dt>
+		<dd><em>String</em> - CSS class which is applied to the node open at any time, also any node with this class hardcoded will be open on load (default: 'div.content')</dd>
+		<dt>speed</dt>
+		<dd><em>String/Integer</em> - Speed at which animation occurs, can be any of 'slow', 'normal', 'fast', or any time in ms (default: 'normal')</dd>
+		<dt>update</dt>
+		<dd><em>Array</em> - Array containing elements in the header which require their innerHTML to change on open/close. Elements in this array should be objects with a selector property (String) and text property (Array) (default: [])</dd>
+		<dt>overlap</dt>
+		<dd><em>Boolean</em> - Flag whether opening a node will overlap on top of an existing open node (i.e. the accordion always stays the same height)</dd>
+		<dt>collapsible</dt>
+		<dd><em>Boolean</em> - Flag whether it's possible to close all accordion sections (default: true)</dd>
+		<dt>sameHeight</dt>
+		<dd><em>Boolean</em> - Flag whether all nodes should be the same height (default: true)</dd>
+	</dl>
+	<h2>Events</h2>
+	<dl>
+		<dt>onopenaccordion</dt>
+		<dd>Fires when a node is opened. Event fires on the node.</dd>
+		<dt>oncloseaccordion</dt>
+		<dd>Fires when a node is closed. Event fires on the accordion. Node closed is passed as second parameter.</dd>
+		<dt>openaccordion</dt>
+		<dd>Forces a node to open. To be triggered on the node.</dd>
+		<dt>closeaccordion</dt>
+		<dd>Forces any open nodes to close. To be triggered on the accordion.</dd>
+	</dl>
+</body>
+</html>

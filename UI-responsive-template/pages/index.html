@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"><!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+
+		<title>Frontend base template</title>
+		<meta name="description" content=""/>
+		<meta name="author" content=""/>
+
+		<!--To prevent the BlackBerry Browser from scaling the content in page view. -->
+		<meta name="HandheldFriendly" content="True" />
+		<!--Below indicates that the page should be rendered as if fit-to-screen were turned off. The nominal width is a number that indicates what screen size the Web site was developed for -->
+		<meta name="MobileOptimized" content="320" />
+		<!-- 'width' property controls the size of the viewport, can be a number or special value device-width value which is the width of the screen in CSS pixels at a scale of 100%. -->
+		<meta name="viewport" content="width=1024, initial-scale=0, maximum-scale=1.0, minimum-scale=0.25, user-scalable=yes" />
+		<!--If content is set to yes, the web application runs in full-screen mode; otherwise, it does not. The default behavior is to use Safari to display web content. -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<!--Sets the style of the status bar for a web application. -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="style/reset.css" media="screen,projection"/>
+		<link rel="stylesheet" href="style/layout.css" media="screen,projection"/>
+		<link rel="stylesheet" href="style/content.css" media="screen,projection"/>
+		<link rel="stylesheet" href="style/print.css" media="print"/>		
+
+		<!-- For iPhone 4 -->
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon.png">
+		<!-- For iPad 1-->
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon.png">
+		<!-- For iPhone 3G, iPod Touch and Android -->
+		<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-precomposed.png">
+		<!-- For Nokia -->
+		<link rel="shortcut icon" href="images/apple-touch-icon.png">
+		<!-- For everything else -->
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="canonical" href="/">
+
+		<script src="script/jquery-1.7.2.min.js"></script>
+		<script src="script/modernizr-2.0.6.min.js"></script>
+		<script src="script/jquery.touchwipe.min.js"></script>
+		<script src="script/default.js"></script>
+
+		<!-- Styling for the templates information page ONLY, not to be used in the actual build. -->
+		<style type="text/css">
+		</style>
+  	</head>
+
+	<body>
+	
+		<div id="pageWrapper">
+		
+			<!-- START "Header" -->
+			<header>
+				<p>Header</p>
+			</header>
+			
+			<!-- START "Navigation" -->
+			<nav>
+				<p>Navigation</p>
+			</nav>
+			
+			<!-- END "pageBody" -->
+			<section>
+				<div id="pageBody">
+					<div class="row">
+						<div class="column columnWidthFull">
+							<div class="content">
+								<article>
+									<h1>Article Full Width</h1>
+									<p>Page article.</p>
+								</article>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="column columnWidthHalf">
+							<div class="content">
+								<article>
+									<h2>Article Half Width</h2>
+									<p>Page article.</p>
+								</article>
+							</div>
+						</div>
+						<div class="column columnWidthHalf">
+							<div class="content">
+								<article>
+									<h2>Article Half Width</h2>
+									<p>Page article.</p>
+								</article>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="column columnWidthOneThird">
+							<div class="content">
+								<article>
+									<h3>Article One Third Width</h3>
+									<p>Page article.</p>
+								</article>
+							</div>
+						</div>
+						<div class="column columnWidthOneThird">
+							<div class="content">
+								<article>
+									<h3>Article One Third Width</h3>
+									<p>Page article.</p>
+								</article>
+							</div>
+						</div>
+						<div class="column columnWidthOneThird">
+							<div class="content">
+								<article>
+									<h3>Article One Third Width</h3>
+									<p>Page article.</p>
+								</article>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="column columnWidthOneFourth">
+							<div class="content">
+								<article>
+									<h4>Article One Fourth Width</h4>
+									<p>Page article.</p>
+								</article>
+							</div>
+						</div>
+						<div class="column columnWidthOneFourth">
+							<div class="content">
+								<article>
+									<h4>Article One Fourth Width</h4>
+									<p>Page article.</p>
+								</article>
+							</div>
+						</div>
+						<div class="column columnWidthOneFourth">
+							<div class="content">
+								<article>
+									<h4>Article One Fourth Width</h4>
+									<p>Page article.</p>
+								</article>
+							</div>
+						</div>
+						<div class="column columnWidthOneFourth">
+							<div class="content">
+								<article>
+									<h4>Article One Fourth Width</h4>
+									<p>Page article.</p>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<!-- START "Footer" -->
+			<footer>
+				<p>Footer</p>
+			</footer>
+			
+		</div>
+		<div>
+			<p>Note: This is just a sample page so please adjust all the HTML, CSS, Scripts and even Meta data according to your project if you decide to use this base template.</p>
+			<p>This is a responsive template styled with the base of mobile first. I've only added just the base breakpoints but new breakpoints can be introduced or old ones can be removed if your design requires that.</p>
+		</div>
+	
+	</body>
+
+</html>

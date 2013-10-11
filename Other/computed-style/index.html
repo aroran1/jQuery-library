@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+	<title>Computed Style jQuery Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+	<script type="text/javascript" src="jquery.computed-style.js"></script>				
+	</head>
+<body>
+<div class="pageFrame01">
+	<h1>Computed Style jQuery Extension</h1>
+	<ul>
+		<li><a href="jquery.computed-style.js">Code</a></li>
+	</ul>
+	<p>Gets computed CSS styles</p>
+	<p>Returns the computed style of the first element in a collenction</p>
+	<h3>Example JS</h3>
+	<pre>
+$('div').getCompStyle('zIndex');
+	</pre>
+	<h3>Parameters</h3>
+	<dl>
+		<dt>property</dt>
+		<dd><em>Css property</em> - single css property string in JavaScript style that you want the value of.</dd>
+	</dl>
+	<p>Note that different browser compute styles differenty. You will normally want to be specific. E.g. use borderLeftWidth as border may not have a computed value even though it is present in the stylesheet.</p>
+</body>
+</html>

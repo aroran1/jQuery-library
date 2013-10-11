@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Custom Select jQuery Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+	<script type="text/javascript" src="jquery.custom-select.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.customSelect').customSelect({
+				startValue: 'Please select'
+			});
+		});
+	</script>
+	<style>
+		.customSelect {
+			height:1%;
+			position:relative;
+			margin:0 0 20px;
+		}
+		.customSelect:after{
+			visibility:hidden;
+			clear:both;
+			content:".";
+			display:block;
+			height:0;
+		}
+		.valueRegion {
+			width:190px;
+			height:20px;
+			border:1px solid #555;
+    		padding:5px;
+    		cursor:pointer;
+		}
+		.valueRegion .arrow {
+			float:left;
+			height:20px;
+			width:17px;
+			background:url("img/downArrow.gif") no-repeat right 6px;
+		}
+		.valueRegion .value {
+			float:left;
+			color:#000;
+			width:173px;
+			height:20px;
+			overflow:hidden;
+			padding:0;
+			border:none;
+			background:transparent;
+		}
+		.customSelectMenu ul {
+			border:1px solid #555;
+			float:left;
+			padding:0;
+			margin:0;
+			list-style:none;
+			position:absolute;
+			top:31px;
+			min-width:200px;
+			*width:200px;
+			background-color:#fff;
+			z-index:2;
+		}
+		.customSelectMenu li {
+			padding:5px;
+			color:#000;
+			cursor:pointer;
+		}
+		.customSelectMenu li.active {
+			background-color:#3399FF;
+		}
+		.customSelectMenu li a {
+			display:block;
+		}
+	</style>
+</head>
+<body>
+	<h1>Custom Select jQuery Extension</h1>
+	<ul>
+		<li><a href="jquery.custom-select.js">Code</a></li>
+	</ul>
+	<p>Replaces default select boxes and list items with custom ones.</p>
+	<h2>Example</h2>
+	<div class="customSelect">
+		<select>
+			<option value="option 0">option 0</option>
+			<option value="option 1">option 1</option>
+			<option value="option 2">option 2</option>
+		</select>
+	</div>
+	<div class="customSelect">
+		<ul>
+			<li><a href="#1">link 1</a></li>
+			<li><a href="#2">link 2</a></li>
+			<li><a href="#3">link 3</a></li>
+		</ul>
+	</div>
+	<h2>Example JS</h2>
+	<pre>
+$(document).ready(function(){
+	$('.customSelect').customSelect();
+});
+	</pre>
+	<h2>Example JS (with parameters)</h2>
+	<pre>
+$(document).ready(function(){
+	$('.customSelect').customSelect({
+		active: 'on'
+	});
+});					
+	</pre>
+	<h2>Parameters</h2>
+	<dl>
+		<dt>active</dt>
+		<dd><em>String</em> - class added when menu item is selected (default: 'active')</dd>
+		<dt>startValue</dt>
+		<dd><em>String</em> - initial selected value that does not appear in list (default: null)</dd>
+		<dt>maxHeight</dt>
+		<dd><em>Int</em> - Maximum height for list. If the list height is greater than this value then the scrolling mechanism is implemented (default: 300)</dd>
+	</dl>
+</body>
+</html>

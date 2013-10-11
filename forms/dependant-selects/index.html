@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Custom Select jQuery Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+	<script type="text/javascript" src="jquery.dependant-selects.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.dependantSelects').dependantSelects({
+				index: 1
+			});
+		});
+	</script>
+	<style>
+		select {
+			width:200px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Dependant Selects jQuery Extension</h1>
+	<ul>
+		<li><a href="jquery.dependant-selects.js">Code</a></li>
+	</ul>
+	<p>Changes the second select box depending on the value of the first.</p>
+	<h2>Example</h2>
+	<div class="dependantSelects">
+		<div class="firstSelect">
+			<p>Select a country:</p>
+			<select>
+				<option value="Please Select">Please Select</option>
+				<option value="England">England</option>
+				<option value="Wales">Wales</option>
+				<option value="Scotland">Scotland</option>
+			</select>
+		</div>
+		<div class="selectResults">
+			<p>Select a region:</p>
+			<select>
+				<option value="Northumberland">Northumberland</option>
+				<option value="Cumbria">Cumbria</option>
+				<option value="Durham">Durham</option>
+				<option value="North Yorkshire">North Yorkshire</option>
+			</select>
+			<select>
+				<option value="Anglesey">Anglesey</option>
+				<option value="Flint">Flint</option>
+				<option value="Caernarfon">Caernarfon</option>
+				<option value="Denbigh">Denbigh</option>
+			</select>
+			<select>
+				<option value="Aberdeen">Aberdeen</option>
+				<option value="Ayr">Ayr</option>
+				<option value="Banff">Banff</option>
+				<option value="Berwick">Berwick</option>
+			</select>
+		</div>
+	</div>
+	<h2>Example JS</h2>
+	<pre>
+$(document).ready(function(){
+	$('.dependantSelects').dependantSelects();
+});
+	</pre>
+	<h2>Example JS (with parameters)</h2>
+	<pre>
+$(document).ready(function(){
+	$('.dependantSelects').dependantSelects({
+		index: 1
+	});
+});					
+	</pre>
+	<h2>Parameters</h2>
+	<dl>
+		<dt>index</dt>
+		<dd><em>Integer</em> - The index to start from for the first select box (default: 0)</dd>
+		<dt>firstSelect</dt>
+		<dd><em>Selector</em> - CSS selector for first select wrapper (default: '.firstSelect')</dd>
+		<dt>selectResults</dt>
+		<dd><em>Selector</em> - CSS selector for select results select wrapper (default: '.selectResults')</dd>
+	</dl>
+</body>
+</html>

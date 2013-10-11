@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="example.css">
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+		<script src="jquery.data-filter.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function () {
+				$('.example').dataFilter({
+					duration: 400,
+					filterElements: '.content p'
+				});
+			});
+		</script>
+		<title>Data filter jQuery extension for XHTML</title>
+	</head>
+	<body>
+		<h1>Data filter jQuery extension for XHTML</h1>
+		<ul>
+			<li><a href="jquery.data-filter.js">Code</a></li>
+			<li><a href="index.html">View example for HTML5</a></li>
+		</ul>
+		<p>Show and hide content based on data-orientated CSS classes</p>
+		<h3>Example</h3>
+		<div class="example" id="example1">
+			<ul class="tabs">
+				<li class="selected"><a href="#">Show all</a></li>
+				<li><a href="#" class="data-group_1">Show group 1</a></li>
+				<li><a href="#" class="data-group_2">Show group 2</a></li>
+				<li><a href="#" class="data-group_2 data-price_200">Show group 2 with price 200</a></li>
+				<li><a href="#" class="data-price_300">Show price 300</a></li>
+			</ul>
+			<div class="content">
+				<p>No group. No price</p>
+				<p class="data-group_1 data-price_100">Group 1. Price 100</p>
+				<p class="data-group_2 data-price_200">Group 2. Price 200</p>
+				<p class="data-price_300">No group. Price 300</p>
+				<p class="data-group_1 data-price_300">Group 1 Price 300</p>
+				<p class="data-group_2 data-price_300">Group 2 Price 300</p>				
+				<p class="data-group_all data-price_all">All groups. All prices</p>
+			</div>
+		</div>
+		<h3>Example HTML</h3>
+		<pre>
+&lt;div class="example" id="example1"&gt;
+	&lt;ul class="tabs"&gt;
+		&lt;li class="selected"&gt;&lt;a href="#"&gt;Show all&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#" class="data-group_1"&gt;Show group 1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#" class="data-group_2"&gt;Show group 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#" class="data-group_2 data-price_200"&gt;Show group 2 with price 200&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#" class="data-price_300"&gt;Show price 300&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;div class="content"&gt;
+		&lt;p&gt;No group. No price&lt;/p&gt;
+		&lt;p class="data-group_1 data-price_100"&gt;Group 1. Price 100&lt;/p&gt;
+		&lt;p class="data-group_2 data-price_200"&gt;Group 2. Price 200&lt;/p&gt;
+		&lt;p class="data-price_300"&gt;No group. Price 300&lt;/p&gt;
+		&lt;p class="data-group_1 data-price_300"&gt;Group 1 Price 300&lt;/p&gt;
+		&lt;p class="data-group_2 data-price_300"&gt;Group 2 Price 300&lt;/p&gt;				
+		&lt;p class="data-group_all data-price_all"&gt;All groups. All prices&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+		</pre>
+		<h3>Example JS</h3>
+		<pre>
+$(function () {
+	$('.example').dataFilter({
+		duration: 400,
+		filterElements: '.content p'
+	});
+});			
+		</pre>
+		<h3>Parameters</h3>
+		<dl>
+			<dt>duration</dt>
+			<dd><em>String/Integer</em> - duration of filter animation (default: 0)</dd>
+			<dt>filterElements</dt>
+			<dd><em>jQuery selector statement</em> - elements to be filtered inside object (default: 'div')</dd>
+		</dl>
+	</body>
+</html>

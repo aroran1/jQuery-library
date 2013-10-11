@@ -1,0 +1,31 @@
+.overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    background:url("images/overlay-bg.png");
+}
+.lightbox {
+    position:absolute;
+    top:0;
+    left:0;
+    background: #fff;
+}
+.lightbox img {
+    display: block;
+}
+.lightboxInner1 {
+    padding:10px;
+}
+.lightbox .close {
+    height:30px;
+    width:30px;
+    background:url("images/close.png") no-repeat top left;
+    position:absolute;
+    top:-15px;
+    right:-15px;
+}
+.lightbox .disabled {
+    color: #999;
+}
+
+

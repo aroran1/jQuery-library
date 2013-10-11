@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+	<title>Text Selection jQuery Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+	<script type="text/javascript" src="jquery.text-selection.js"></script>				
+	</head>
+<body>
+	<h1>Text Selection jQuery Extension</h1>
+	<ul>
+		<li><a href="jquery.text-selection.js">Code</a></li>
+	</ul>
+	<p>Sets or returns the current text selection. N.B. This extension is currently only designed for use with text inputs.</p>
+	<h3>Example JS</h3>
+	<p>To get the current selection as a string</p>
+	<pre>
+$("input[type='text']").selection()
+	</pre>
+	<h3>Example JS</h3>
+	<p>To set the current selection, supply start an end indexes</p>
+	<pre>
+$("input[type='text']").selection(0, 10)
+	</pre>
+	<h3>Parameters</h3>
+	<dl>
+		<dt>start</dt>
+		<dd><em>Integer</em> - start of selection.</dd>
+		<dt>end</dt>
+		<dd><em>Integer (optional)</em> - end of selection.</dd>							
+	</dl>
+</body>
+</html>

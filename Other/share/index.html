@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+	<title>Share jQuery Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+	<script type="text/javascript" src="jquery.share.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#shareList').share({
+				sites: [
+					{name: 'facebook', text: false},
+					{name: 'twitter', text: false},
+					{name: 'linkedIn', text: false},
+					{name: 'stumbleUpon', text: false},
+					{name: 'digg', text: false},
+					{name: 'delicious', text: false},
+					{name: 'reddit', text: false},
+					{name: 'yahoo', text: false},
+					{name: 'buzz', text: false},
+					{name: 'email', text: true}
+				]
+			});
+		});
+	</script>			
+	</head>
+	<style type="text/css">
+		#shareList {
+			height:1%;
+			list-style:none;
+		}
+		#shareList:after {
+			visibility:hidden;
+			clear:both;
+			content:".";
+			height:0;
+			display:block;
+		}
+		#shareList li {
+			float:left;
+			margin:0 0 0 5px;
+		}
+		#shareList a {
+			width:34px;
+			height:34px;
+			display:block;
+		}
+		.facebook a {
+			background: url(img/facebook-logo.gif) no-repeat top left;
+		}
+		.twitter a {
+			background: url(img/twitter-logo.gif) no-repeat top left;
+		}
+		.linkedIn a {
+			background: url(img/linkedIn-logo.gif) no-repeat top left;
+		}
+		.stumbleUpon a {
+			background: url(img/stumbleUpon-logo.gif) no-repeat top left;
+		}
+		.digg a {
+			background: url(img/digg-logo.gif) no-repeat top left;
+		}
+		.delicious a {
+			background: url(img/delicious-logo.gif) no-repeat top left;
+		}
+		.reddit a {
+			background: url(img/reddit-logo.gif) no-repeat top left;
+		}
+		.yahoo a {
+			background: url(img/yahoo-logo.gif) no-repeat top left;
+		}
+		.buzz a {
+			background: url(img/buzz-logo.gif) no-repeat top left;
+		}
+	</style>
+<body>
+<div class="pageFrame01">
+	<h1>Share jQuery Extension</h1>
+	<ul>
+		<li><a href="jquery.share.js">Code</a></li>
+	</ul>
+	<p>Allows sharing of links on social networking sites</p>
+	<h2>Example</h2>
+	<ul id="shareList"></ul>
+	<h2>Example JS</h2>
+	<pre>
+$('#shareList').share({
+	sites: [
+		{name: 'facebook', text: false},
+		{name: 'twitter', text: false},
+		{name: 'linkedIn', text: false},
+		{name: 'stumbleUpon', text: false},
+		{name: 'digg', text: false},
+		{name: 'delicious', text: false},
+		{name: 'reddit', text: false},
+		{name: 'yahoo', text: false},
+		{name: 'buzz', text: false},
+		{name: 'email', text: true}
+	]
+});
+	</pre>
+	<h2>Example JS (with parameters)</h2>
+		<pre>
+$('#shareList').share({
+	elem: 'div',
+	url: 'some.url.com',
+	title: 'some description text',
+	popup: false,
+	sites: [
+		{name: 'facebook', text: false},
+		{name: 'twitter', text: false},
+		{name: 'linkedIn', text: false},
+		{name: 'stumbleUpon', text: false},
+		{name: 'digg', text: false},
+		{name: 'delicious', text: false},
+		{name: 'reddit', text: false},
+		{name: 'yahoo', text: false},
+		{name: 'buzz', text: false},
+		{name: 'email', text: true}
+	]
+});
+		</pre>
+	<h2>Parameters</h2>
+	<dl>
+		<dt>elem</dt>
+		<dd><em>String</em> - Tag name that the links should be wrapped in (default: 'li')</dd>
+		<dt>url</dt>
+		<dd><em>String</em> - URL to share (default: location.href)</dd>
+		<dt>title</dt>
+		<dd><em>String</em> - Text to share (default: $('title').text())</dd>
+		<dt>popup</dt>
+		<dd><em>Boolean</em> - Open link in a popup window or not (default: true)</dd>
+		<dt>sites</dt>
+		<dd><em>Array</em> - Array of objects. E.g. {name: 'facebook', text: false} - name in camelCase (default: [])</dd>
+	</dl>
+</body>
+</html>

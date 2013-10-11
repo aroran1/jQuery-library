@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Tooltip jQuery Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+	<script type="text/javascript" src="../fade-elem/jquery.fade-elem.js"></script>
+	<script type="text/javascript" src="jquery.tooltip.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.tooltip').tooltip()
+				.bind('onopentooltip', function(){
+					try{console.log('open');}catch(error){}
+				})
+				.bind('onclosetooltip', function(){
+					try{console.log('close');}catch(error){}
+				});
+		});
+	</script>
+	<style>
+		.question {
+			padding:20px;
+			width:500px;
+		}
+		.tooltip {
+			position:relative;
+		}
+		.tooltipOverlay {
+			position: absolute;
+			top: -5px;
+			left: 25px;
+			width: 250px;
+		}
+		.tooltipOverlay p {
+			color:#fff;
+			font-size:87.5%;
+			padding:0;
+			margin:0;
+		}
+		.tooltipTrigger {
+			background:url(img/infoBtn.png) no-repeat top left;
+			width:16px;
+			height:16px;
+		}
+		.tooltipInner1 {
+			background: url(img/tipBottom.png) no-repeat left bottom;
+    		padding-bottom: 10px;
+		}
+		.tooltipInner2 {
+			background: url(img/tipTop.png) no-repeat left top;
+			padding: 8px 15px 0 30px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Tooltip jQuery Extension</h1>
+	<ul>
+		<li><a href="jquery.tooltip.js">Code</a></li>
+	</ul>
+	<p>Shows and hides tooltips</p>
+	<h2>Example</h2>
+	<div class="question">
+		<div class="tooltip">
+			<div class="tooltipTrigger"></div>
+			<div class="tooltipContent">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+		</div>
+	</div>
+	<h2>Example JS</h2>
+	<pre>
+$(document).ready(function(){
+	$('.tooltip').tooltip();
+});
+	</pre>
+	<h2>Example JS (with parameters)</h2>
+	<pre>
+$(document).ready(function(){
+	$('.tooltip').tooltip({
+		selectors: {
+			trigger: '.rollOverTrigger'
+		},
+		classes: {
+			overlay: 'rollOver',
+			inner1: 'rollOverInner'
+		},
+		event: 'click',
+		active:	'on',
+		duration: 'slow'
+	});
+});						
+	</pre>
+	<h2>Parameters</h2>
+	<dl>
+		<dt>selectors</dt>
+		<dd><em>Object literal</em> - Object of CSS selectors (default: {trigger:'.tooltipTrigger',content:'.tooltipContent'})</dd>
+		<dt>classes</dt>
+		<dd><em>Object literal</em> - Object of strings (default: classes: {overlay:'tooltipOverlay',inner1:'tooltipInner1',inner2:'tooltipInner2',spout:'spout'})</dd>
+		<dt>event</dt>
+		<dd><em>String</em> - Event to show/hide content (default: 'click')</dd>
+		<dt>active</dt>
+		<dd><em>String</em> - Class added/removed to trigger (default: 'active')</dd>
+		<dt>duration</dt>
+		<dd><em>String/Integer</em> - Duration of fade in/out (default: 'normal')</dd>
+		<dt>closeContent</dt>
+		<dd><em>String</em> - Content of close link. If nothing is passed then the close link is not appended (default: '')</dd>
+		<dt>className</dt>
+		<dd><em>String</em> - Class name to be added to the overlay (default: '')</dd>
+	</dl>
+	<h2>Requires</h2>
+	<ul>
+		<li>jquery.fade-elem.js</li>
+	</ul>
+	<h3>Events</h3>
+	<dl>
+		<dt>toggletooltip</dt>
+		<dd>Toggles a node.</dd>
+		<dt>onopentooltip</dt>
+		<dd>Fires when a node is opened.</dd>
+		<dt>onclosetooltip</dt>
+		<dd>Fires when a node is closed.</dd>
+	</dl>
+</body>
+</html>

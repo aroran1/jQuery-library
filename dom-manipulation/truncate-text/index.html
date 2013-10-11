@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="example.css">
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+		<script src="jquery.expander.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function () {
+				$('div.expander').expander({
+					  slicePoint: 250,
+					  widow: 2,
+					  expandEffect: 'show',
+					  expandText: 'Show full description',
+					  userCollapseText: 'Hide description',
+					  expandEffect: 'slideDown',
+					  expandSpeed: 1500,
+					  collapseEffect: 'slideUp',
+					  collapseSpeed: 1000
+				});
+			});
+		</script>
+		<title>Text Truncate</title>
+	</head>
+	<body>
+		<h1>Counter</h1>
+		<ul>
+			<li><a href="jquery.countdown.js">Code</a></li>
+		</ul>
+		<p>This plugin was grabbed from the the below site: <br />
+			<a href="http://plugins.learningjquery.com/expander/demo/index.html" target="_blank">http://plugins.learningjquery.com/expander/demo/index.html</a></p>
+		<h3>Example</h3>
+		<div class="expander">
+			<p>Left Hand Drive AC Cobra MKIV 5.0 V8 In 1982 Brian Angliss was running Autokraft, a Cobra restoration shop, parts supplier and replica manufacturer based on the Brooklands industrial park in Weybridge, UK. To further such pursuits, he acquired some of the tooling from Thames Ditton and created the MKIV; the car had US-spec 5 mph (8.0 km/h) bumpers, a federalized motor, and a larger interior with modern switchgear. About 480 cars were produced in his factory at Brooklands. He also produced a lightweight model which was more in tune with the original Cobra spirit, though it could not be imported to the US due to Federal regulations.</p>
+			<p>Early cars were sold as the Autokraft MKIV but eventually Angliss acquired the rights to use the AC name. Derek Hurlock had been strongly protective of the name, but Angliss' high standards of craftsmanship won him over. When the Hurlock family finally sold up in 1986 Angliss fully acquired the AC trademark rights and set up a new AC company as a joint venture with Ford. A big conflict followed over the future direction for AC, but Angliss eventually won his independence as well as Ford's continuing and essential cooperation as an engine and parts supplier.</p>
+		</div>					
+			
+		<h3>Example HTML</h3>
+		<pre>
+&lt;div class="expander"&gt;
+	&lt;p&gt;Left Hand Drive AC Cobra MKIV 5.0 V8 In 1982 Brian Angliss was running Autokraft, a Cobra restoration shop, parts supplier and replica manufacturer based on the Brooklands industrial park in Weybridge, UK. To further such pursuits, he acquired some of the tooling from Thames Ditton and created the MKIV; the car had US-spec 5 mph (8.0 km/h) bumpers, a federalized motor, and a larger interior with modern switchgear. About 480 cars were produced in his factory at Brooklands. He also produced a lightweight model which was more in tune with the original Cobra spirit, though it could not be imported to the US due to Federal regulations.&lt;/p&gt;
+	&lt;p&gt;Early cars were sold as the Autokraft MKIV but eventually Angliss acquired the rights to use the AC name. Derek Hurlock had been strongly protective of the name, but Angliss' high standards of craftsmanship won him over. When the Hurlock family finally sold up in 1986 Angliss fully acquired the AC trademark rights and set up a new AC company as a joint venture with Ford. A big conflict followed over the future direction for AC, but Angliss eventually won his independence as well as Ford's continuing and essential cooperation as an engine and parts supplier.&lt;/p&gt;
+&lt;/div&gt;				
+		</pre>
+		<h3>Example JS</h3>
+		<pre>
+$(function () {
+	$('div.expander').expander({
+		  slicePoint: 250,
+		  widow: 2,
+		  expandEffect: 'show',
+		  expandText: 'Show full description',
+		  userCollapseText: 'Hide description',
+		  expandEffect: 'slideDown',
+		  expandSpeed: 1500,
+		  collapseEffect: 'slideUp',
+		  collapseSpeed: 1000
+	});
+});		
+		</pre>
+		<h3>Parameters</h3>
+		<p>Please see <a href="http://plugins.learningjquery.com/expander/demo/index.html" target="_blank">http://plugins.learningjquery.com/expander/demo/index.html</a> for all the details.</p>
+	</body>
+</html>

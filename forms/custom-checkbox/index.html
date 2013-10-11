@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Custom Checkbox jQuery Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../jquery-min.js"></script>
+	<script type="text/javascript" src="jquery.custom-checkbox.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.checkbox').customCheckbox()
+				.bind('checkedcheckbox', function(){
+					try{console.log('checked');}catch(error){}
+				})
+				.bind('uncheckedcheckbox', function(){
+					try{console.log('unchecked');}catch(error){}
+				});
+		});
+	</script>
+	<style>
+		.question {
+			padding:20px;
+			width:500px;
+		}
+		.checkbox .customCheckbox {
+			height:30px;
+			width:30px;
+			background:url(img/checkbox-unchecked.gif) no-repeat top left;
+		}
+		.checkbox .checked {
+			background:url(img/checkbox-checked.gif) no-repeat top left;
+		}
+	</style>
+</head>
+<body>
+	<h1>Custom Checkbox jQuery Extension</h1>
+	<ul>
+		<li><a href="jquery.custom-checkbox.js">Code</a></li>
+	</ul>
+	<p>Replaces default checkboxes with custom ones.</p>
+	<h2>Example</h2>
+	<div class="question">
+		<div class="checkbox">
+			<label for="checkbox1">checkbox1</label>
+			<input type="checkbox" id="checkbox1" />
+		</div>
+	</div>
+	<div class="question">
+		<div class="checkbox">
+			<label for="checkbox2">checkbox2</label>
+			<input type="checkbox" id="checkbox2" />
+		</div>
+	</div>
+	<h2>Example JS</h2>
+	<pre>
+$(document).ready(function(){
+	$('.checkbox').checkbox();
+});
+	</pre>
+	<h2>Example JS (with parameters)</h2>
+	<pre>
+$(document).ready(function(){
+	$('.checkbox').checkbox({
+		customCheckbox: 'customCB',
+		checked:'selected'
+	});
+});						
+	</pre>
+	<h2>Parameters</h2>
+	<dl>
+		<dt>customCheckbox</dt>
+		<dd><em>String</em> - Class to add to custom checkbox (default: 'customCheckbox')</dd>
+		<dt>checked</dt>
+		<dd><em>String</em> - Class to add when the checkbox is checked (default: 'checked')</dd>
+	</dl>
+	<h3>Events</h3>
+	<dl>
+		<dt>togglecheckbox</dt>
+		<dd>Toggles a checkbox</dd>
+		<dt>checkedcheckbox</dt>
+		<dd>Fires when a checkbox is checked</dd>
+		<dt>uncheckedcheckbox</dt>
+		<dd>Fires when a checkbox is unchecked</dd>
+	</dl>
+</body>
+</html>
